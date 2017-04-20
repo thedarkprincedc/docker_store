@@ -10,7 +10,8 @@ ENV TIMEZONE="US/United States" \
 RUN apk update \
      && apk add php-pdo_mysql \
      && mkdir /init-start && cd $_ \
-     && wget -O https://www.dropbox.com/s/t9ik2nj604bhsj3/romsync-frontend-1_0.zip?dl=0 \
+     && wget -O romsync-frontend-1_0.zip "https://www.dropbox.com/s/t9ik2nj604bhsj3/romsync-frontend-1_0.zip?dl=1" \
+     && unzip romsync-frontend-1_0.zip \
      && cp romsync /app \
      && cp romsync-resources /app/resources
 EXPOSE 80/tcp
