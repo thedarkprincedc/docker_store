@@ -12,6 +12,6 @@ RUN apk update \
      && mkdir /init-start && cd $_ \
      && wget -O romsync-frontend-1_0.zip "https://www.dropbox.com/s/t9ik2nj604bhsj3/romsync-frontend-1_0.zip?dl=1" \
      && unzip romsync-frontend-1_0.zip \
-     && cp romsync /app \
-     && cp romsync-resources /app/resources
+     && cp -r romsync/* /app \
+     && cp -r romsync-resources /app/resources
 EXPOSE 80/tcp
