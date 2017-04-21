@@ -7,9 +7,10 @@ RUN apk update \
      && wget -O romsync-frontend-1_0.zip "https://www.dropbox.com/s/t9ik2nj604bhsj3/romsync-frontend-1_0.zip?dl=1" \
      && unzip romsync-frontend-1_0.zip \
      && cp -r romsync/* /app \
-     && cp -r romsync-resources /app/resources
-     && chmod 755 /app/resources/logs/app.log
+     && cp -r romsync-resources /app/resources \
+     && chmod 755 /app/resources/logs/app.log \
      && chown apache /app/resources/logs/app.log
+     
 EXPOSE 80/tcp
 
 ENV TIMEZONE="US/United States" \
