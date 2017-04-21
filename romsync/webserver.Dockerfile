@@ -1,5 +1,11 @@
-FROM alpine:3.3
-
+FROM sameersbn/ubuntu:14.04.20170123
+ENV REDMINE_VERSION=3.2.5 \
+    REDMINE_USER="redmine" \
+    REDMINE_HOME="/home/redmine" \
+    REDMINE_LOG_DIR="/var/log/redmine" \
+    REDMINE_CACHE_DIR="/etc/docker-redmine" \
+    RAILS_ENV=production
+    
 #FROM k0st/alpine-apache-php:latest
 #MAINTAINER FAN ZHISHEN <thedarkprincedc@yahoo.com>
 
@@ -13,4 +19,4 @@ FROM alpine:3.3
 
 #EXPOSE 80/tcp
 
-ENV TIMEZONE="US/United States" PHP_MEMORY_LIMIT="512M" MAX_UPLOAD="50M" PHP_MAX_FILE_UPLOAD=200 PHP_MAX_POST="100M"
+#ENV TIMEZONE="US/United States" PHP_MEMORY_LIMIT="512M" MAX_UPLOAD="50M" PHP_MAX_FILE_UPLOAD=200 PHP_MAX_POST="100M"
